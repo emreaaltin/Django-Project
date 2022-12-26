@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş</title>
+    <link rel="stylesheet" href="/static/giris.css">
+    <link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous"
+  />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+	   {% include 'includes/navbar.html' %}
+     {% if messages %}
+     {% for i in messages %}
+     <div class="alert alert-{{i.tags}} text-center text-danger mt-5">
+       {{i}}
+     </div>
+     {% endfor %}
+   {% endif %}
+    <div class="container sms text-white">
+          <div class="col-12 col-md-6 m-auto">
+            <h5 class="text-center mb-5">Giriş Yap</h5>
+            <hr>
+            <form class="pt-0 pt-md-5" method="POST" id="giris">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInput">Kullanıcı Adı Giriniz</label><br><br>
+                <input type="text" name="kullanici" class="form-control inpt" id="exampleInput" aria-describedby="emailHelp" placeholder="E-Posta">
+              </div>
+              <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Şifre Giriniz</label><br><br>   
+                <input type="password" class="form-control" name="sifre" id="exampleInputPassword1" placeholder="Şifre">
+            </div>
+            <div class="form-group form-check mt-3">
+                <input type="checkbox" class="form-check-input inpt" id="exampleCheck1">
+                <label class="form-check-label me-5" for="exampleCheck1">Beni Hatırla</label>
+                Kayıt Olmak İçin > <a class="me-5 text-success" href="{% url 'giris2' %}">Kayıt Ol</a>
+              </div>
+              <button type="submit" form="giris" id="btn" class="btn btn-dark mt-5">Giriş Yap</button>
+        </form>
+    </div>
+</div>
+<div class="yukleme text-center mt-3">
+    <div class="spinner-grow text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-white" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-white" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-white" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-white" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h2 class="text-white">Giriş Bekleniyor...</h2>
+</div>
+{% include 'includes/footer.html' %}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script src="/static/giris.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/4429ba4587.js" crossorigin="anonymous"></script>
+</body>
+</html>

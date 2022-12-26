@@ -1,0 +1,586 @@
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+	background-color: black !important;
+}
+.ustbar{
+	background-color: rgb(57, 57, 58) !important;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 15px;
+}
+.hero-text{
+	font-size: 20px;
+	font-weight:bold;
+	color: rgb(255, 255, 255);
+	width: 50%;
+	margin-left: 100px;
+}
+.hero-text h2{
+	color: #FBB5D1;
+	font-size: 30px;
+}
+.hero-text p{
+	padding-top: 60%;
+}
+.reklam .text{
+	color: rgb(168, 168, 168);
+	position: absolute;
+	width: 50%;
+	padding-right: 100px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.reklam .reklamic{
+	text-align: center !important;
+}
+.reklam-foto img{
+	position: absolute;
+	width: 600px;
+}
+.reklam-video video{
+	width: 600px;
+	margin-left: 600px;
+}
+.reklamic{
+	width: 100%;
+}
+.anahat{
+	background-color: rgb(56, 56, 56);
+}
+.card{
+	background-color: rgb(255, 255, 255) !important;
+	border: none !important;
+	margin-inline: 30px;
+	margin: 0px 20px 50px;
+	border-radius: 25px !important; 
+	width: 240px;
+}
+.card-title{
+	font-size: 21px !important;
+}
+.card-body,.card-title,.card-img{
+	background-color: rgb(20, 20, 20) !important;
+}
+.card button{
+	border: none;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	padding: 7px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: rgb(148, 97, 2);
+	text-transform: capitalize;
+}
+.card button:hover{
+	background-color: green;
+	transition: 0.5s;
+	/* border-radius: 20px; */
+	transform: scale(1.1);
+}
+
+.accordion{
+    background:linear-gradient(260deg,rgb(32, 32, 32),rgb(51, 50, 50));
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 20px;
+}
+.genel
+{
+  width:100%;
+  box-sizing:border-box;
+  height:100%; 
+}
+
+.genel .ust
+{
+  height:15vh;
+  display:flex;
+
+  padding: 35px;
+  align-items:center;
+  justify-content:space-between;
+  background:transparent;
+}
+.genel .ust .logo
+{
+  font-size:22px;
+}
+.genel .ust .menu ul
+{
+  display:flex;
+}
+.genel .ust .menu ul li
+{
+  margin:0 15px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+position:relative}
+.genel .ust .menu ul li:hover:before
+{
+  content:"";
+    width:15px;
+  transition:.5s;
+ height:25px;
+  margin-left:25px;
+  border-radius:10%;
+    position: absolute;
+  border-bottom:3px solid  rgb(249, 48, 66);
+}
+.genel .ust .menu ul li:nth-child(1):before
+{
+  content:"";
+    width:15px;
+  transition:.5s;
+ height:25px;
+  margin-left:25px;
+  border-radius:10%;
+    position: absolute;
+  border-bottom:3px solid  rgb(249, 48, 66);
+}
+
+.genel .icerik
+{
+  display:flex;
+  width:90%;
+  justify-content:space-between;
+  height:calc(100% - 15vh);
+  margin:0 5%;
+}
+.genel .icerik .sol
+{
+  width:40%;
+ 
+  padding:45px 35px;
+  height:90%;
+}
+.genel .icerik .sol  h3
+{
+  margin:15px 0;
+  color: rgb(249, 48, 66);
+}
+.genel .icerik .sol  h5
+{
+  margin:15px 0;
+  color:#565555;
+line-height:20px;
+}
+.genel .icerik .sol .para
+{
+  margin:30px 0;
+  font-size:30px;
+font-weight:bolder;
+}
+.genel .icerik .sol .alacaklı
+{
+  position:relative;
+  position: relative;
+    display: flex;
+    width: 126%;
+}
+.genel .icerik .sol .alacaklı input
+{
+  width:35%;
+  border-radius:15px;
+  height:55px;
+  text-align:center;
+  font-size:16px;
+  font-weight:bolder;
+  margin-right:25px;
+  background:#eee;
+  box-shadow:0 0 16px rgba(0,0,0, .50);
+  border:1px solid #ddd;
+
+}
+.genel .icerik .sol .alacaklı input:hover
+{
+  box-shadow:0 0 2px #ddd;
+}
+.genel .icerik .sol .alacaklı label:nth-child(1)
+{
+  
+    content: "+";
+    width: 40px;
+    height:43px;
+    position: absolute;
+    background: #ddd;
+cursor:pointer;
+  font-size:40px;
+  
+  line-height:36px;
+  text-align:center;
+    border-radius: 27%;
+    z-index: 1;
+    top: 5px;
+  left:5px
+}
+.genel .icerik .sol .alacaklı label
+{
+  cursor:pointer;
+    content: "";
+    width: 40px;
+    height:43px;
+    position: absolute;
+    background: #ddd;
+
+  font-size:30px;
+  
+  line-height:36px;
+  text-align:center;
+    border-radius: 27%;
+    z-index: 1;
+    top: 5px;
+  right:185px;
+}
+.genel .icerik .sol .alacaklı button
+{
+  padding:20px 25px;
+  width:40%;
+      background: rgb(249, 48, 66);
+  color:#fff;
+  transition:.5s all;
+  border-radius:10px;
+  cursor:pointer;
+}
+.genel .icerik .sol .alacaklı button:hover
+{
+  box-shadow:0  0 16px rgb(249, 48, 66);
+transition:.5s all;}
+.genel .icerik .sol .alacaklı i
+{
+  margin-right:10px;
+}
+.genel .icerik .sag
+{
+  width:58%;
+  
+  height:90%;  padding:45px 0;
+position:relative;
+
+
+}
+.genel .icerik .sag img
+{
+  width:100%;
+  border-radius:20px;
+  height:auto;
+}
+.genel .icerik .onz
+{
+  content:"";
+  width:15px;
+  height:15px;
+  top:60%;
+  left:79%;
+  
+  background:#fff;
+  border-radius:50%;
+  position:absolute;
+  cursor:pointer;
+}
+.genel .icerik .onz:before
+{
+  content:"";
+    border:2px solid #fff;
+  width:100%;
+top: -2px;
+  left:-2px;
+  border-radius:50%;
+  position:absolute;
+  height:100%;
+  animation: 1s border infinite linear;
+}
+.sag .onz:hover .tool-tip
+{
+opacity:1;  transition:.5s all;
+  visibility:"visible";
+  
+}
+.tool-tip
+{ width:fit-content;
+height:auto;
+  opacity:0;
+  visibility:"hidden";
+  padding:5px;
+  display:flex;
+  margin-top:-45px;
+    margin-left:-22px;
+  transition:.5s all;
+  justify-content:center;
+  align-items:center;
+border-radius:4px;
+background:rgba(255,255,255, .70);}
+.tool-tip:before
+{
+  content:"";
+  width:0;
+  height:0;
+  border:8px solid transparent;
+  border-top-color:rgba(255,255,255, .70);
+  position:absolute;
+  bottom:13px;
+}
+@keyframes border
+{
+  0%
+  {
+    opacity:.5;
+    transform:scale(1);
+  }
+  100%
+  {
+    transform:scale(3);
+    opacity:0;
+  }
+  
+}
+.sepet
+{
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  position:relative;
+  
+}
+.sepet i
+{
+  
+  font-size:25px;
+}
+#openmenu
+{
+  display:none;
+  width:45px;
+height:45px;
+  cursor:pointer;
+
+  align-items:center;
+font-size:17px;
+  border:1px solid;
+  border-radius:10px;
+  justify-content:center;
+}
+#openmenu:hover
+{
+ box-shadow:1px 1px 3px #000;
+  transition:.5s;
+}
+#menuac:checked + .responsive-menu
+{
+  display:block;
+}
+.responsive-menu
+{
+  width:50%;
+  opacity:0;
+  z-index:1;
+  visibility:hidden;
+  bottom:0;
+  transition:.5s all;
+  height:100%;
+    position:fixed;
+  background:rgba(255,255,255, 230);
+  right:2px;
+  
+}
+.responsive-menu ul
+{
+  display:flex;
+  flex-direction:column;
+  padding-top:35px;
+  text-align:center;
+  
+}
+.responsive-menu ul h3
+{
+  padding-bottom:25px;
+}
+.responsive-menu ul label
+{
+      position: absolute;
+    right: 38px;
+    display: block;
+    line-height:35px;
+  width:45px;
+  height:45px;
+  top: 30px;
+  font-weight:bolder;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid;
+}
+
+.responsive-menu ul li
+{
+  cursor:pointer;
+  width:100%;
+  font-weight:600;
+  padding:20px;
+}
+.rmenu-bottom
+{
+
+  width:100%;
+  margin-top:45px;
+  display:flex;
+}
+.rmenu-bottom li i
+{
+font-size:30px;
+}
+.rmenu-bottom li button
+{
+  padding:15px 25px;
+      background: rgb(249, 48, 66);
+  color:#fff;
+  transition:.5s all;
+  border-radius:10px;
+  cursor:pointer;
+}
+@media  (max-width:768px)
+  {
+    .genel .icerik
+    {
+      display:flex;
+      flex-direction:column-reverse;
+      height:auto;
+    }
+    .genel .icerik .sol .alacaklı
+    {
+      width:100%;
+    }
+    .genel .icerik .sol ,.sag
+    {
+      width:100% !important;
+    }
+     .genel .ust .menu , .sepet
+    {
+      display:none !important;
+    }
+    #openmenu
+    {
+      display:flex;
+    }
+}
+.sepetim
+{
+  width:200px;
+  height:100%;
+  position:absolute;
+  right:0;
+  z-index:2;
+
+  background:#fff;
+   opacity:0;
+  visibility:hidden;
+display:flex;
+  flex-direction:column;
+}
+#sepet
+{
+  position:absolute;
+  opacity:0;
+  visibility:hidden;
+  transition:2s all;
+}
+#sepet:checked  + .sepetim
+{
+visibility:visible;
+  opacity:1; 
+  transition:2s all;
+  right:0px;
+
+}
+#kepe
+{
+
+  border-bottom:2px solid;
+}
+.panel{
+    padding: 0 18px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: none;
+    overflow: hidden;
+	border: 1px solid rgb(41, 40, 40);
+}
+.panel .hiddenbutton:hover{
+	background-color: white;
+	color: black;
+	transition: 1s;
+}
+.reklam .text{
+	color: rgb(168, 168, 168);
+	position: absolute;
+	width: 50%;
+	padding-right: 100px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.reklam .reklamic{
+	text-align: center !important;
+}
+.reklam-foto img{
+	position: absolute;
+	width: 600px;
+}
+.reklam-video video{
+	width: 600px;
+	margin-left: 600px;
+}
+.reklamic{
+	width: 100%;
+}
+.card img{
+    cursor: pointer;
+	
+}
+.hiddenbutton{
+	background-color: black;
+	color: white;
+	width: 100%;
+	text-align: left !important;
+	margin: 5px;
+}
+.dropdown-item{
+	margin: auto !important;
+	padding: 20px !important;
+	transition: 1s !important;
+	
+}
+.dropdown-item:hover{
+	background:linear-gradient(260deg,rgb(218, 218, 218),rgb(51, 50, 50));
+}
+footer{
+	background-color: rgb(20, 18, 18);
+}
+footer img{
+	width: 180px;
+}
+footer .row h3{
+	font-size: 25px;
+	font-weight: bold;
+}
+i {
+	margin-right: 10px;
+}

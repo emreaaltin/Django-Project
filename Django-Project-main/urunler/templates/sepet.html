@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet</title>
+    <link rel="stylesheet" href="/static/sepet.css">
+    <link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous"
+  />
+</head>
+<body>
+    <!-- NAVBAR -->
+	{% include 'includes/navbar.html' %}
+<hr class="text-white mt-5">
+    <div class="container anahat text-white">
+        <div class="container-fluid anahatsepet p-2 text-center">
+          <h6 class="text-white anahatsepetfix"><i class="fa-sharp fa-solid fa-cart-shopping me-3 text-success"></i>Sepet</h6>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-11 urun5" id="urun5">
+            <a href="#" id="sil1"><i class="fa-solid fa-trash dell"></i></a>
+            <div class="photo col-5 text-center"><img src="{% static 'img/mac.png' %} " alt="..">
+              <div class="urunaciklamasi"><small class="d-inline" id="info5">iPhone 14 Pro
+                Daha Pro. Daha ileri.</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2 ">
+              <small class="fs-6 fw-bolder">23.999 TL</small>
+            </span>
+            <span class="uruns col-3">
+              <button id="samsunspor" class="d-inline button1 samsunspor"><b>+</b></button>
+              <input id="adet1" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="button2azalt" class="d-inline button2 button2azalt"><b>-</b></button><br>
+              <p id="yanyazi" class="mt-3"></p>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              Fiyat<input id="sagt" type="text" disabled value=23999 class="sagt  text-center fs-5">
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun6">
+            <a href="#" id="sil2"><i class="fa-solid fa-trash dell"></i></a>
+            <div class="photo col-5 text-center"><img src="{% static 'img/yyy.png' %}" alt="..">
+                <div class="urunaciklamasi"><small class="d-inline" id="info5">iPhone 14 Pro
+                    Daha Pro. Daha ileri.</small>
+                  </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">23.999 TL</small>
+            </span>
+            <span class="uruns col-3">
+              <button id="buton2" class="d-inline button1 buton2"><b>+</b></button>
+              <input id="adet11" type="text" disabled value=1 class="urunsayisi adet2 text-center">
+              <button id="button2azalt" class="d-inline button2 button2azalt"><b>-</b></button><br>
+              <p id="yanyazi2" class="mt-3"></p>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              Fiyat<input id="sagt2" type="text" disabled value=23999 class="sagt2  text-center fs-5">
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun15">
+            <a href="#" id="sil3"><i class="fa-solid fa-trash dell"></i></a>
+            <div class="photo col-5 text-center"><img src="{% static 'img/compare_ipad_pro__erf9x8mw04sy_large_2x.png' %}" alt="..">
+                <div class="urunaciklamasi"><small class="d-inline" id="info5">iPhone 14 Pro
+                    Daha Pro. Daha ileri.</small>
+                  </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">23.999 TL</small>
+            </span>
+            <span class="uruns col-3">
+              <button id="buton4" class="d-inline button1"><b>+</b></button>
+              <input id="adet3" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="buton5" class="d-inline button2"><b>-</b></button>
+              <p id="yanyazi3" class="mt-3"></p>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              Fiyat<input id="sagt3" type="text" disabled value=23999 class="sagt text-center fs-5">
+            </span>
+          </div>
+        </div>
+        <div class="row mb-3 altbutonlar px-5 d-flex justify-content-between">
+          <div class="col-4 text-center ode m-auto">
+            <h5 id="odemeyazi" class="mt-5"></h5>
+            <button id="#odemebuton" class="odemeyegec odemebuton">Ödemeye Geç</button>
+            <p id="paragraf7" class="paragraf7 text-white"></p>
+          </div>
+        </div>
+      </div>
+{% include 'includes/footer.html' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/static/sepet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/4429ba4587.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+{% if messages %}
+{% for i in messages %}
+<div class="alert alert-{{i.tags}} text-center text-danger">
+  {{i}}
+</div>
+{% endfor %}
+{% endif %}
+    {% block content %}
+    <form method="post" id="form" class="my-5 container">
+        {% csrf_token %}
+        <div class="">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputText" class="text-white">İsim</label>
+                <input type="text" name="isim" class="form-control" id="inputText" placeholder="İsim">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4" class="text-white">Email</label>
+                <input type="email" name="eposta" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="inputAdress"class="text-white">Kullanıcı Adı</label>
+              <input type="text" name="kullaniciAdi" class="form-control w-50" id="inputAdress" placeholder="Adres yazınız..">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputText1" class="text-white">Açıklama</label>
+                <input type="text" name="aciklama" class="form-control" id="inputText1" placeholder="Mesajınızı girin">
+              </div>
+            </div>
+            <button type="submit" form="form" class="btn btn-primary mt-3">Gönder</button>
+        </div>
+      </form>
+    {% include "includes/footer.html" %}
+    {% endblock content %}

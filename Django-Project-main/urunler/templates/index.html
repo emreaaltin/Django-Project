@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EA</title>
+	<link rel="stylesheet" href="/static/index.css">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="shortcut icon" type="image/png"
+		href="{% static 'img/360_F_394810686_kmidDZiq1P2fjBEBHkXLS4JxTk51HfHs.jpg' %}" />
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	{% include 'includes/navbar.html' %}
+	{% if messages %}
+    {% for i in messages %}
+    <div class="alert alert-{{i.tags}} text-center text-danger mt-5">
+      {{i}}
+    </div>
+    {% endfor %}
+  {% endif %}
+	<!-- BAŞLANGIÇ -->
+	<hr class="text-white">
+	{% block content %}
+	<div class="container bg-black anahat mt-5">
+		<div class="row">
+			<div class="col-xl-3 col-lg-6">
+				<div class="sidebar">
+					<button class="accordion fw-bolder fs-5">
+						Telefon
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Android"><button class="hiddenbutton">Android</button></a>
+								<a href="/?search=İos"><button class="hiddenbutton">İos</button></a>
+							</div>
+						</div>
+					</div>
+					<button class="accordion  fw-bolder fs-5">
+						Televizyon
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Samsung"><button class="hiddenbutton">Samsung</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Vestel"><button class="hiddenbutton">Vestel</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Arçelik"><button class="hiddenbutton">Arçelik</button></a>
+							</div>
+						</div>
+					</div>
+					<button class="accordion  fw-bolder fs-5">
+						Aksesuar
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Saat"><button class="hiddenbutton">Saat</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Bileklik"><button class="hiddenbutton">Bileklik</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Kolye"><button class="hiddenbutton">Kolye</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Şapka"><button class="hiddenbutton">Şapka</button></a>
+							</div>
+						</div>
+					</div>
+					<button class="accordion  fw-bolder fs-5">
+						Bilgisayar
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<a href="/?search=İşlemci"><button class="hiddenbutton">İşlemci</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Ekran+Kartı"><button class="hiddenbutton">Ekran Kartı</button></a>
+							</div>
+						</div>
+					</div>
+					<button class="accordion  fw-bolder fs-5">
+						Elektronik
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Mouse"><button class="hiddenbutton">Mouse</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Klavye"><button class="hiddenbutton">Klavye</button></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/?search=Monitör"><button class="hiddenbutton">Monitör</button></a>
+							</div>
+						</div>
+					</div>
+					<button class="accordion fw-bolder fs-5">
+						En Beğenilenler
+					</button>
+					<div class="panel">
+						<div class="row">
+							<div class="col">
+								<button class="hiddenbutton">---</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button class="hiddenbutton">---</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button class="hiddenbutton">---</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endblock content %}
+			{% block homepage %}
+			<div class="col-xl-9 col-lg-6 ">
+				<div class="row">
+					{% for i in urunler %}
+					<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 d-flex text-center">
+						<div class="card">
+							{% if i.fotograf %}
+							<img class="card-img-top" height="250" src="{{i.fotograf.url}}" alt="Card image cap">
+							{% else %}
+							<img class="card-img-top" src="{% static 'img/app.png'%}" alt="Card image cap">
+							{% endif %}
+							<div class="card-body ">
+								<b class="card-title text-white text-center">{{i.isim}}
+								</b>
+								<p class="text-white-50">{{i.aciklama}}<br><p class="text-success">{{i.Kategori.isim}} <br> {% for i in i.sub_category.all %}<small>{{i.isim}}</small>{% endfor %}		
+									</p></p>
+								<p class="card-text text-center"><small class="text-muted">Başlangıç fiyatı: {{i.fiyat}}
+								TL</small></p>				
+								<a href="#"><button class="bg-success" id="sepet2">sepete ekle</button></a>
+								<a href="{% url 'urun' i.slug %}"><button class="bg-secondary" id="sepet2">Ürün Detayları</button></a>
+								<p class="text-white" id="paragraf3"></p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			{% endblock homepage %}
+			
+			{% block carousel %}
+				
+
+				
+			<div class="container reklam align-items-center">
+				<!-- carousel -->
+				<div class="container-fluid  mt-5">
+					<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+								class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+								aria-label="Slide 4"></button>
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+								aria-label="Slide 5"></button>
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+								aria-label="Slide 6"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{% static 'img/tekk1.gif' %}" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/tek4.gif' %}" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/tekk1.gif' %}" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/tek4.gif' %}" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/tekk1.gif' %}" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'img/tek4.gif' %}" class="d-block w-100" alt="...">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			{% endblock carousel %}
+		</div>
+	</div>
+
+
+	{% include 'includes/footer.html' %}
+
+
+	<script src="/static/index.js"></script>
+	<script src="/static/urun.js"></script>
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/5b61822651.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
